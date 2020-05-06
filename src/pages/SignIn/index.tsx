@@ -2,6 +2,7 @@ import React, { useRef, useCallback } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 
 import { FaUserPlus } from 'react-icons/fa';
 import { TiArrowRightThick } from 'react-icons/ti';
@@ -16,7 +17,7 @@ import Logo from '../../Components/Logo';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 interface SignInFormData {
   email: string;
@@ -70,31 +71,33 @@ const SignIn: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Logo size="large" />
+        <AnimationContainer>
+          <Logo size="large" />
 
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <h2>Faça seu Login</h2>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h2>Faça seu Login</h2>
 
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="Senha"
-          />
+            <Input name="email" icon={FiMail} placeholder="E-mail" />
+            <Input
+              name="password"
+              icon={FiLock}
+              type="password"
+              placeholder="Senha"
+            />
 
-          <Button type="submit">
-            Entrar
-            <TiArrowRightThick />
-          </Button>
+            <Button type="submit">
+              Entrar
+              <TiArrowRightThick />
+            </Button>
 
-          <a href="forgot">Esqueci minha senha</a>
-        </Form>
+            <a href="forgot">Esqueci minha senha</a>
+          </Form>
 
-        <a href="forgot">
-          <FaUserPlus />
-          Criar conta
-        </a>
+          <Link to="/signup">
+            <FaUserPlus />
+            Criar conta
+          </Link>
+        </AnimationContainer>
       </Content>
       <Background />
     </Container>

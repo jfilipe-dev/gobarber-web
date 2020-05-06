@@ -2,6 +2,7 @@ import React, { useCallback, useRef } from 'react';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 
 import { FaUserPlus } from 'react-icons/fa';
 import { TiArrowLeftThick } from 'react-icons/ti';
@@ -13,7 +14,7 @@ import Logo from '../../Components/Logo';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -44,30 +45,32 @@ const SignUp: React.FC = () => {
     <Container>
       <Background />
       <Content>
-        <Logo size="large" />
+        <AnimationContainer>
+          <Logo size="large" />
 
-        <Form ref={formRef} initialData={{}} onSubmit={handleSubmit}>
-          <h2>Faça seu cadastro</h2>
+          <Form ref={formRef} initialData={{}} onSubmit={handleSubmit}>
+            <h2>Faça seu cadastro</h2>
 
-          <Input name="name" icon={FiUser} placeholder="Nome" />
-          <Input name="email" icon={FiMail} placeholder="E-mail" />
-          <Input
-            name="password"
-            icon={FiLock}
-            type="password"
-            placeholder="Senha"
-          />
+            <Input name="name" icon={FiUser} placeholder="Nome" />
+            <Input name="email" icon={FiMail} placeholder="E-mail" />
+            <Input
+              name="password"
+              icon={FiLock}
+              type="password"
+              placeholder="Senha"
+            />
 
-          <Button type="submit">
-            Cadastrar
-            <FaUserPlus />
-          </Button>
-        </Form>
+            <Button type="submit">
+              Cadastrar
+              <FaUserPlus />
+            </Button>
+          </Form>
 
-        <a href="forgot">
-          <TiArrowLeftThick />
-          Já tem uma conta? Faça seu login.
-        </a>
+          <Link to="/">
+            <TiArrowLeftThick />
+            Já tem uma conta? Faça seu login.
+          </Link>
+        </AnimationContainer>
       </Content>
     </Container>
   );
