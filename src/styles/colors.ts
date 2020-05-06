@@ -4,7 +4,9 @@ interface Colors {
   color2: string;
   color3: string;
   color4: string;
+  info: string;
   error: string;
+  success: string;
 }
 
 const colors: Colors = {
@@ -13,7 +15,9 @@ const colors: Colors = {
   color2: '#0E9843',
   color3: '#160D0F',
   color4: '#645E61',
-  error: '#8E443D',
+  info: '#6B7FD7',
+  error: '#DA4C44',
+  success: '#0E9843',
 };
 
 export default colors;
