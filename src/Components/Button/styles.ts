@@ -4,11 +4,11 @@ import colors from '../../styles/colors';
 
 export const Container = styled.button`
   display: flex;
-  place-content: center;
+  justify-content: center;
+  align-items: center;
 
   svg {
     margin-left: 8px;
-    margin-top: 3px;
   }
 
   background: ${colors.color2};
