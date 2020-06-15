@@ -29,13 +29,13 @@ export const Container = styled.div<ContainerProps>`
     props.isErrored &&
     css`
       color: ${colors.error};
-      border-color: ${colors.error};
+      /* border-color: ${colors.error}; */
     `}
 
   ${(props) =>
     props.isFocused &&
     css`
-      border: 2px solid ${colors.color2};
+      /* border: 2px solid ${colors.color2}; */
       color: ${colors.color2};
     `}
 
@@ -49,7 +49,7 @@ export const Container = styled.div<ContainerProps>`
     flex: 1;
     background: transparent;
     border: 0;
-    color: ${colors.color1};
+    color: ${colors.color5};
 
     &::placeholder {
       color: ${colors.color4};
@@ -72,7 +72,7 @@ export const Error = styled(Tooltip)`
 
   span {
     background: ${colors.error};
-    color: ${colors.color1};
+    color: ${colors.color3};
 
     &::before {
       border-color: ${colors.error} transparent;

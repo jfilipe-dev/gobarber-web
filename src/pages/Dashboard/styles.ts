@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 
 import colors from '../../styles/colors';
 
@@ -7,7 +6,7 @@ export const Container = styled.div``;
 
 export const Header = styled.header`
   padding: 32px 0;
-  background: ${colors.color3};
+  background: ${colors.color1};
 `;
 
 export const HeaderContent = styled.div`
@@ -20,10 +19,10 @@ export const HeaderContent = styled.div`
     margin-left: auto;
     background: transparent;
     border: 0;
-    color: ${colors.color4};
+    color: ${colors.color1};
 
     svg {
-      color: ${colors.color4};
+      color: ${colors.color3};
       width: 25px;
       height: 25px;
     }
@@ -47,8 +46,16 @@ export const Profile = styled.div`
     margin-left: 16px;
     line-height: 24px;
 
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
     span {
-      color: ${colors.color1};
+      color: ${colors.color3};
     }
 
     strong {
@@ -103,11 +110,12 @@ export const NextAppointment = styled.div`
   }
 
   div {
+    margin-top: 12px;
     background: ${colors.color3};
     display: flex;
     align-items: center;
     padding: 16px 24px;
-    border-radius: 24px;
+    border-radius: 14px;
     position: relative;
 
     &::before {
@@ -135,7 +143,7 @@ export const NextAppointment = styled.div`
       margin-left: auto;
       display: flex;
       align-items: center;
-      color: ${colors.color4};
+      color: ${colors.color5};
 
       svg {
         color: ${colors.color2};
@@ -149,10 +157,10 @@ export const Section = styled.section`
   margin-top: 48px;
 
   > strong {
-    color: ${colors.color4};
+    color: ${colors.color5};
     font-size: 20px;
     line-height: 26px;
-    border-bottom: 1px solid ${colors.color4};
+    border-bottom: 2px dashed ${colors.color6};
     display: block;
     padding-bottom: 16px;
     margin-bottom: 16px;
@@ -175,12 +183,15 @@ export const Appointment = styled.div`
     margin-left: auto;
     display: flex;
     align-items: center;
-    color: ${colors.color4};
-    width: 70px;
+    color: ${colors.color5};
+    font-size: 20px;
+    width: 85px;
 
     svg {
       color: ${colors.color2};
       margin-right: 8px;
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -239,11 +250,13 @@ export const Calendar = styled.aside`
     background: ${colors.background};
     border-radius: 10px;
     color: ${colors.color1};
+    transition: all 0.2s;
   }
 
   .DayPicker:not(.DayPicker--interactionDisabled)
     .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-    background: ${shade(0.2, `${colors.color4}`)};
+    background: ${colors.color2};
+    color: ${colors.color3};
   }
 
   .DayPicker-Day--today {
@@ -258,6 +271,6 @@ export const Calendar = styled.aside`
   .DayPicker-Day--selected {
     background: ${colors.color2} !important;
     border-radius: 10px;
-    color: #232129 !important;
+    color: ${colors.color3} !important;
   }
 `;

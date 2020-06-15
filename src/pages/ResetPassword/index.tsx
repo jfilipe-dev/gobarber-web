@@ -14,7 +14,7 @@ import Logo from '../../Components/Logo';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Content, AnimationContainer } from './styles';
 import api from '../../services/api';
 
 interface ResetPasswordFormData {
@@ -36,7 +36,10 @@ const SignIn: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          password: Yup.string().required('Senha obrigatória'),
+          password: Yup.string()
+            .min(6, 'Mínimo de 6 dígitod')
+            .required('Campo obrigatorio'),
+
           password_confirmation: Yup.string().oneOf(
             [Yup.ref('password'), null],
             'Confirmação incorreta',
@@ -120,7 +123,6 @@ const SignIn: React.FC = () => {
           </Form>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

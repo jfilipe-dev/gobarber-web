@@ -2,13 +2,14 @@ import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 import colors from '../../styles/colors';
-import SignInBackgroundImg from '../../assets/sign-in-background.png';
 
 export const Container = styled.div`
   height: 100vh;
 
   display: flex;
   align-items: stretch;
+
+  background: ${colors.color1};
 `;
 
 export const Content = styled.div`
@@ -18,7 +19,6 @@ export const Content = styled.div`
   justify-content: center;
 
   width: 100%;
-  max-width: 700px;
 
   a {
     color: ${colors.color2};
@@ -67,6 +67,7 @@ export const AnimationContainer = styled.div`
     h2 {
       margin-bottom: 24px;
       font-weight: 400;
+      color: ${colors.color3};
     }
 
     a {
@@ -81,10 +82,4 @@ export const AnimationContainer = styled.div`
       }
     }
   }
-`;
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${SignInBackgroundImg}) no-repeat center;
-  background-size: cover;
 `;

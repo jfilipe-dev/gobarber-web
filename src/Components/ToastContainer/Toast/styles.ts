@@ -30,7 +30,7 @@ export const Container = styled(animated.div)<ContainerProps>`
   padding: 16px;
   border-radius: 4px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  background: ${colors.color1};
+  background: ${colors.color3};
 
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@ export const Container = styled(animated.div)<ContainerProps>`
       font-size: 14px;
       opacity: 0.8;
       line-height: 20px;
-      color: ${colors.color4};
+      color: ${colors.color5};
     }
   }
 

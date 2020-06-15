@@ -9,6 +9,8 @@ export const Container = styled.div`
 
   display: flex;
   align-items: stretch;
+
+  background: ${colors.color1};
 `;
 
 export const Content = styled.div`
@@ -67,17 +69,18 @@ export const AnimationContainer = styled.div`
     h2 {
       margin-bottom: 24px;
       font-weight: 400;
+      color: ${colors.color3};
     }
 
     a {
-      color: ${colors.color1};
+      color: ${colors.color3};
       display: block;
       margin-top: 24px;
       text-decoration: none;
       transition: all 0.2s;
 
       &:hover {
-        color: ${shade(0.2, colors.color1)};
+        color: ${shade(0.2, colors.color3)};
       }
     }
   }

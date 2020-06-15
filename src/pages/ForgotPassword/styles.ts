@@ -9,6 +9,8 @@ export const Container = styled.div`
 
   display: flex;
   align-items: stretch;
+
+  background: ${colors.color1};
 `;
 
 export const Content = styled.div`
@@ -63,6 +65,7 @@ export const AnimationContainer = styled.div`
     margin: 14vh 0;
     width: 340px;
     text-align: center;
+    color: ${colors.color3};
 
     h2 {
       margin-bottom: 24px;

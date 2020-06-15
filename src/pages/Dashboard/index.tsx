@@ -5,6 +5,7 @@ import DayPicker, { DayModifiers } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
 import { FiPower, FiClock } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Header,
@@ -135,6 +136,8 @@ const Dashboard: React.FC = () => {
     );
   }, [appointments]);
 
+  console.log(nextAppointment);
+
   return (
     <Container>
       <Header>
@@ -145,7 +148,9 @@ const Dashboard: React.FC = () => {
             <img src={user.avatar_url} alt={user.name} />
             <div>
               <span>Bem-vindo</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
 
@@ -173,7 +178,7 @@ const Dashboard: React.FC = () => {
                   alt={nextAppointment.user.name}
                 />
 
-                <strong>{user.name}</strong>
+                <strong>{nextAppointment.user.name}</strong>
                 <span>
                   <FiClock />
                   {nextAppointment.hourFormatted}
@@ -186,7 +191,7 @@ const Dashboard: React.FC = () => {
             <strong>Manhã</strong>
 
             {morningAppointments.length === 0 && (
-              <p>Nenhm agendamento neste período.</p>
+              <p>Nenhum agendamento neste período.</p>
             )}
 
             {morningAppointments.map((appointment) => (
@@ -212,7 +217,7 @@ const Dashboard: React.FC = () => {
             <strong>Tarde</strong>
 
             {afternoonAppointments.length === 0 && (
-              <p>Nenhm agendamento neste período.</p>
+              <p>Nenhum agendamento neste período.</p>
             )}
 
             {afternoonAppointments.map((appointment) => (

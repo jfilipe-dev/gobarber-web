@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import colors from '../../styles/colors';
 
 interface LogoProps {
   size?: 'small' | 'large';
@@ -14,6 +15,9 @@ export const Logo = styled.div<LogoProps>`
             align-items: center;
             flex-direction: column;
           }
+          h1 {
+            color: ${colors.color3};
+          }
           img {
             width: 52px;
             margin-right: 8px;
@@ -28,6 +32,7 @@ export const Logo = styled.div<LogoProps>`
           }
           h1 {
             font-size: 18px;
+            color: ${colors.color3};
           }
           img {
             width: 36px;
