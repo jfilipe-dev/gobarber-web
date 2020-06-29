@@ -19,7 +19,7 @@ import {
   Calendar,
 } from './styles';
 
-import Logo from '../../Components/Logo';
+import logo from '../../assets/logo.png';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
 
@@ -136,13 +136,11 @@ const Dashboard: React.FC = () => {
     );
   }, [appointments]);
 
-  console.log(nextAppointment);
-
   return (
     <Container>
       <Header>
         <HeaderContent>
-          <Logo size="small" />
+          <img src={logo} alt="GoBarber" />
 
           <Profile>
             <img src={user.avatar_url} alt={user.name} />

@@ -4,18 +4,18 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
-import { FaUserPlus } from 'react-icons/fa';
+import { TiArrowRightThick } from 'react-icons/ti';
 import { FiMail } from 'react-icons/fi';
 
 import { useToast } from '../../hooks/toast';
 
 import getValidationErros from '../../utils/getValidationErros';
 
-import Logo from '../../Components/Logo';
+import logo from '../../assets/logo.png';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Content, AnimationContainer, Header } from './styles';
 import api from '../../services/api';
 
 interface ForgotPasswordFormData {
@@ -80,10 +80,18 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <Container>
+      <Header>
+        <div>
+          <img src={logo} alt="GoBarber" />
+
+          <Link to="/">
+            Fazer login
+            <TiArrowRightThick />
+          </Link>
+        </div>
+      </Header>
       <Content>
         <AnimationContainer>
-          <Logo size="large" />
-
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h2>Recuperar senha</h2>
 
@@ -93,14 +101,8 @@ const ForgotPassword: React.FC = () => {
               Recuperar
             </Button>
           </Form>
-
-          <Link to="/">
-            <FaUserPlus />
-            Voltar ao login
-          </Link>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

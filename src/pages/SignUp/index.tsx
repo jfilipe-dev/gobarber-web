@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
 
 import { FaUserPlus } from 'react-icons/fa';
-import { TiArrowLeftThick } from 'react-icons/ti';
+import { TiArrowRightThick } from 'react-icons/ti';
 import { FiMail, FiLock, FiUser } from 'react-icons/fi';
 
 import api from '../../services/api';
@@ -14,11 +14,11 @@ import { useToast } from '../../hooks/toast';
 
 import getValidationErros from '../../utils/getValidationErros';
 
-import Logo from '../../Components/Logo';
+import logo from '../../assets/logo.png';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Content, AnimationContainer, Header } from './styles';
 
 interface SignUpFormaData {
   name: string;
@@ -78,11 +78,18 @@ const SignUp: React.FC = () => {
 
   return (
     <Container>
-      <Background />
+      <Header>
+        <div>
+          <img src={logo} alt="GoBarber" />
+
+          <Link to="/">
+            Fazer login
+            <TiArrowRightThick />
+          </Link>
+        </div>
+      </Header>
       <Content>
         <AnimationContainer>
-          <Logo size="large" />
-
           <Form ref={formRef} initialData={{}} onSubmit={handleSubmit}>
             <h2>Faça seu cadastro</h2>
 
@@ -100,11 +107,6 @@ const SignUp: React.FC = () => {
               <FaUserPlus />
             </Button>
           </Form>
-
-          <Link to="/">
-            <TiArrowLeftThick />
-            Já tem uma conta? Faça seu login.
-          </Link>
         </AnimationContainer>
       </Content>
     </Container>

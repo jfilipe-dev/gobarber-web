@@ -10,11 +10,11 @@ import { useToast } from '../../hooks/toast';
 
 import getValidationErros from '../../utils/getValidationErros';
 
-import Logo from '../../Components/Logo';
+import logo from '../../assets/logo.png';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, AnimationContainer } from './styles';
+import { Container, Content, AnimationContainer, Header } from './styles';
 import api from '../../services/api';
 
 interface ResetPasswordFormData {
@@ -98,12 +98,15 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
+      <Header>
+        <div>
+          <img src={logo} alt="GoBarber" />
+        </div>
+      </Header>
       <Content>
         <AnimationContainer>
-          <Logo size="large" />
-
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <h2>Resetar senha</h2>
+            <h2>Redefinir senha</h2>
 
             <Input
               name="password"

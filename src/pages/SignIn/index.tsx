@@ -13,11 +13,11 @@ import { useToast } from '../../hooks/toast';
 
 import getValidationErros from '../../utils/getValidationErros';
 
-import Logo from '../../Components/Logo';
+import logo from '../../assets/logo.png';
 import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 
-import { Container, Content, AnimationContainer, Background } from './styles';
+import { Container, Header, Content, AnimationContainer } from './styles';
 
 interface SignInFormData {
   email: string;
@@ -73,10 +73,18 @@ const SignIn: React.FC = () => {
 
   return (
     <Container>
+      <Header>
+        <div>
+          <img src={logo} alt="GoBarber" />
+
+          <Link to="/signup">
+            Criar conta
+            <FaUserPlus />
+          </Link>
+        </div>
+      </Header>
       <Content>
         <AnimationContainer>
-          <Logo size="large" />
-
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h2>Faça seu Login</h2>
 
@@ -95,14 +103,8 @@ const SignIn: React.FC = () => {
 
             <Link to="/forgot-password">Esqueci minha senha</Link>
           </Form>
-
-          <Link to="/signup">
-            <FaUserPlus />
-            Criar conta
-          </Link>
         </AnimationContainer>
       </Content>
-      <Background />
     </Container>
   );
 };

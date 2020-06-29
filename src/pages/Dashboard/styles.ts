@@ -15,6 +15,10 @@ export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
 
+  img {
+    width: 148px;
+  }
+
   button {
     margin-left: auto;
     background: transparent;
@@ -37,6 +41,7 @@ export const Profile = styled.div`
   img {
     width: 56px;
     height: 56px;
+    object-fit: cover;
     border-radius: 50%;
   }
 
@@ -76,11 +81,12 @@ export const Schedule = styled.div`
 
   h1 {
     font-size: 36px;
+    color: ${colors.color5};
   }
 
   p {
     margin-top: 8px;
-    color: ${colors.color2};
+    color: ${colors.color4};
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -94,7 +100,7 @@ export const Schedule = styled.div`
       content: '';
       width: 1.3px;
       height: 12px;
-      background: ${colors.color2};
+      background: ${colors.color4};
       margin: 0 8px;
     }
   }
@@ -249,7 +255,7 @@ export const Calendar = styled.aside`
   .DayPicker-Day--available:not(.DayPicker-Day--outside) {
     background: ${colors.background};
     border-radius: 10px;
-    color: ${colors.color1};
+    color: ${colors.color5};
     transition: all 0.2s;
   }
 

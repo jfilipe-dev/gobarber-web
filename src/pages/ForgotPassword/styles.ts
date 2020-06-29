@@ -2,25 +2,53 @@ import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 import colors from '../../styles/colors';
-import SignInBackgroundImg from '../../assets/sign-in-background.png';
 
-export const Container = styled.div`
-  height: 100vh;
+export const Container = styled.div``;
 
-  display: flex;
-  align-items: stretch;
-
+export const Header = styled.div`
   background: ${colors.color1};
+  padding: 28px 0;
+
+  img {
+    width: 148px;
+  }
+
+  div {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+
+      svg {
+        margin-left: 8px;
+      }
+
+      background: ${colors.color2};
+      height: 56px;
+      border-radius: 5px;
+      border: 0;
+      padding: 0 16px;
+      color: ${colors.color3};
+      font-weight: 500;
+      margin-top: 16px;
+      transition: all 0.2s;
+
+      &:hover {
+        background: ${shade(0.2, colors.color2)};
+      }
+    }
+  }
 `;
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   width: 100%;
-  max-width: 700px;
 
   a {
     color: ${colors.color2};
@@ -65,29 +93,23 @@ export const AnimationContainer = styled.div`
     margin: 14vh 0;
     width: 340px;
     text-align: center;
-    color: ${colors.color3};
 
     h2 {
       margin-bottom: 24px;
       font-weight: 400;
+      color: ${colors.color5};
     }
 
     a {
-      color: ${colors.color1};
+      color: ${colors.color5};
       display: block;
       margin-top: 24px;
       text-decoration: none;
       transition: all 0.2s;
 
       &:hover {
-        color: ${shade(0.2, colors.color1)};
+        color: ${shade(0.2, colors.color5)};
       }
     }
   }
-`;
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${SignInBackgroundImg}) no-repeat center;
-  background-size: cover;
 `;

@@ -29,13 +29,13 @@ export const Container = styled.div<ContainerProps>`
     props.isErrored &&
     css`
       color: ${colors.error};
-      /* border-color: ${colors.error}; */
+      border-color: ${colors.error};
     `}
 
   ${(props) =>
     props.isFocused &&
     css`
-      /* border: 2px solid ${colors.color2}; */
+      border: 2px solid ${colors.color2};
       color: ${colors.color2};
     `}
 
